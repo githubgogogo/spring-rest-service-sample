@@ -11,8 +11,8 @@
 
     <import resource="classpath:db/application-context-persistance.xml" />
 
-    <!-- Enables automatic mapping of fund objects to and from JSON -->
-    <mvc:annotation-driven />
+    <!--&lt;!&ndash; Enables automatic mapping of fund objects to and from JSON &ndash;&gt;-->
+    <!--<mvc:annotation-driven />-->
 
     <context:component-scan base-package="com.jeremy.sample" />
 
@@ -25,7 +25,7 @@
         <property name="locations">
             <list>
                 <value>classpath:/environments/default.properties</value>
-                <value>classpath:local-spring-rest-service.properties</value>
+                <value>classpath:test-spring-rest-service.properties</value>
                 <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
                     <property name="staticMethod"
                               value="com.jeremy.sample.utils.properties.HostNameResolver.getHostSpecificPropertiesFileLocation"/>

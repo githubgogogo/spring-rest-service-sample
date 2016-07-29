@@ -1,6 +1,7 @@
 package com.jeremy.sample.utils.properties;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.InputStream;
 import java.net.InetAddress;
@@ -14,7 +15,7 @@ import java.util.Properties;
 public class HostNameResolver
 {
 
-    private static final Logger logger = Logger.getLogger(HostNameResolver.class);
+    private static final Logger logger = LoggerFactory.getLogger(HostNameResolver.class);
     /**
      * @return a file system friendly version of the current host name
      * @throws Exception if unable to generate hostname
