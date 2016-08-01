@@ -1,6 +1,7 @@
 package com.jeremy.sample.service;
 
 import com.jeremy.sample.dao.AccountDao;
+import com.jeremy.sample.domain.Status;
 import com.jeremy.sample.domain.entity.AccountEntity;
 import com.jeremy.sample.domain.messaging.Account;
 import org.slf4j.Logger;
@@ -53,6 +54,7 @@ public class AccountServiceImpl implements AccountService
     public Account create(Account account)
     {
         AccountEntity accountEntity = accountConverter.convert(account);
+        accountEntity.setStatus(Status.ACTIVE);
         accountEntity = accountDao.save(accountEntity);
         return accountConverter.convert(accountEntity);
     }

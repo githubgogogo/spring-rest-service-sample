@@ -1,5 +1,7 @@
 package com.jeremy.sample.domain.messaging;
 
+import com.jeremy.sample.domain.Status;
+
 import java.io.Serializable;
 
 /**
@@ -18,6 +20,8 @@ public class Account implements Serializable
     private String firstName;
 
     private String lastName;
+
+    private Status status;
 
     public Long getId()
     {
@@ -67,5 +71,15 @@ public class Account implements Serializable
     public void setLastName(String lastName)
     {
         this.lastName = lastName;
+    }
+
+    public Status getStatus()
+    {
+        return status;
+    }
+
+    public void setStatus(Status status)
+    {
+        this.status = status;
     }
 }

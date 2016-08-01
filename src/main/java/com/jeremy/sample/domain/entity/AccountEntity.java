@@ -1,7 +1,11 @@
 package com.jeremy.sample.domain.entity;
 
+import com.jeremy.sample.domain.Status;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -34,6 +38,10 @@ public class AccountEntity extends AbstractAuditable implements Serializable
 
     @Column(name = "LAST_NAME", nullable = false)
     private String lastName;
+
+    @Column(name = "STATUS", nullable = false)
+    @Enumerated(EnumType.STRING)
+    private Status status;
 
     public Long getId()
     {
@@ -83,5 +91,15 @@ public class AccountEntity extends AbstractAuditable implements Serializable
     public void setLastName(String lastName)
     {
         this.lastName = lastName;
+    }
+
+    public Status getStatus()
+    {
+        return status;
+    }
+
+    public void setStatus(Status status)
+    {
+        this.status = status;
     }
 }
